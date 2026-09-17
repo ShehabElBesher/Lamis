@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إلى شبح التيك توك 👻💕</title>
+    <title>إلى شبح التيك توك (لميس) 👻💕</title>
     <style>
         body {
             display: flex;
@@ -14,6 +14,9 @@
             background-color: #fce4ec; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
+            /* عشان نمنع تحديد النص في الموبايل */
+            user-select: none; 
+            -webkit-user-select: none;
         }
 
         .container {
@@ -23,7 +26,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             width: 90%;
-            max-width: 500px;
+            max-width: 600px;
             position: relative;
             z-index: 10;
         }
@@ -40,7 +43,7 @@
         h2 {
             color: #d81b60;
             font-size: 24px;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 30px;
             min-height: 80px;
         }
@@ -105,48 +108,63 @@
 
     <div class="container">
         <!-- الصورة المبدئية -->
-        <img id="story-gif" src="https://i.pinimg.com/originals/81/81/47/8181473cdcc6f4cfccb4f0b3e5218d6a.gif" alt="Cute Cat" class="cat-gif">
+        <img id="story-gif" src="https://tenor.com/view/peach-and-goma-peach-and-goma-heart-peach-and-goma-love-gif-17536767128240462356.gif" alt="Cute Cat" class="cat-gif">
         
-        <h2 id="story-text">بتفرج على التيك توك كالعادة... فجأة ظهرتلي تيك توكر جديدة اسمها (لميس) ✨</h2>
+        <h2 id="story-text">أول مرة في حياتي أخد بالي من حد وأهتم بيه كده... يا لميس انتي حد مميز جداً، جميلة، رقيقة، وعاقلة بزيادة 💖</h2>
         
-        <button id="next-button" class="next-btn" onclick="nextScene()">وبعدين؟ 👀</button>
+        <button id="next-button" class="next-btn" onclick="nextScene()">بجد؟ 🙈</button>
 
         <div id="final-buttons" class="final-buttons">
             <button class="yes-btn" onclick="sayYes()">موافقة طبعاً! 🥰</button>
-            <button id="no-btn" class="no-btn" onmouseover="runAway()">لا 😾</button>
+            <button id="no-btn" class="no-btn" onmouseover="runAway(event)" ontouchstart="runAway(event)">لا 😾</button>
         </div>
     </div>
 
     <script>
         const scenes = [
             {
-                text: "بتفرج على التيك توك كالعادة... فجأة ظهرتلي تيك توكر جديدة اسمها (لميس) ✨",
-                gif: "https://i.pinimg.com/originals/81/81/47/8181473cdcc6f4cfccb4f0b3e5218d6a.gif", 
-                btn: "وبعدين؟ 👀"
-            },
-            {
-                text: "أول مرة في حياتي أخد بالي من حد وأهتم بيه كده... انتي حد مميز جداً، جميلة، رقيقة، وعاقلة بزيادة 💖",
-                gif: "https://i.pinimg.com/originals/e8/37/10/e83710787b64a2f1c84136bcad212a4f.gif", 
+                text: "أول مرة في حياتي أخد بالي من حد وأهتم بيه كده... يا لميس انتي حد مميز جداً، جميلة، رقيقة، وعاقلة بزيادة 💖",
+                gif: "https://tenor.com/view/peach-and-goma-peach-and-goma-heart-peach-and-goma-love-gif-17536767128240462356.gif", 
                 btn: "بجد؟ 🙈"
             },
             {
-                text: "وغير الرقة دي، انتي حرفياً (شبح التيك توك)! 👻 ولما بتقولي 'اررررححححب' بتعملي عظمة! 😂",
-                gif: "https://i.pinimg.com/originals/17/dc/5d/17dc5d7366ff40d41e5317a3ee302484.gif", 
+                text: "وغير الرقة دي، انتي حرفياً (شبح التيك توك)! 👻 ولما بتقولي 'اررررححححب' بتعملي عظمة يا لميس! 😂",
+                gif: "https://tenor.com/view/movietime-gif-26874766.gif", 
                 btn: "ههههه كمل ✨"
             },
             {
-                text: "بس أكتر حاجة بتخطف قلبي... لما بتخسري الـ win وتقولي 'وناااااتيييي' بطريقتك القمر دي 🥺💔",
-                gif: "https://i.pinimg.com/originals/bd/a6/50/bda650630b91e9f1a0e1bba69e1c3124.gif", 
+                text: "وده إحساسي لما بتخسري وتاخدي 'وناااااتيييي' 🥺💔",
+                gif: "https://tenor.com/view/hi-there-are-you-gif-22536691.gif", 
                 btn: "يا روحي 🥺"
             },
             {
-                text: "فالقط مقدرش يستحمل، راح قعد على الكمبيوتر وسهر يكتب كود الصفحة دي مخصوص عشان يبعتهالك 💻🐈",
-                gif: "https://i.pinimg.com/originals/58/c2/f7/58c2f7418fc9613ed878e1c6b1aab9da.gif", 
+                text: "ودي وانتي مستنية تكسبي الجولة 🥺",
+                gif: "https://tenor.com/view/j%26d-kitty-gif-10368791297347099509.gif", 
+                btn: "التالي 👀"
+            },
+            {
+                text: "ودي وانتي بتقولي ربنا أكيد هيكرم.. وصغنن مستني 🥰",
+                gif: "https://tenor.com/view/peach-and-goma-gif-2983905865950500979.gif", 
+                btn: "يا خلاصي 🥰"
+            },
+            {
+                text: "دي بقى لما تقولي تكبيس ونبقى 2 بس في اللايف... بس أداءك كأن فيه ألف واحد بيكبس ههههه 😂",
+                gif: "https://tenor.com/view/peach-goma-mitao-cat-dance-gif-12799903058830604934.gif", 
+                btn: "ههههههه"
+            },
+            {
+                text: "ودي وانتي متحمسة 🤩",
+                gif: "https://tenor.com/view/movietime-gif-26874766.gif", 
+                btn: "التالي 👀"
+            },
+            {
+                text: "فالقط مقدرش يستحمل، راح قعد على الكمبيوتر وسهر يكتب كود الصفحة دي مخصوص عشان يبعتهولك يا لميس 💻🐈",
+                gif: "https://tenor.com/view/peach-and-goma-gif-14755089461093313163.gif", 
                 btn: "ايه هي الرسالة؟ 💌"
             },
             {
-                text: "بما إني عملت الكود ده مخصوص... هل تقبلي نشرب قهوة سوا ونعوض أي win ضاع منك؟ ☕💕",
-                gif: "https://i.pinimg.com/originals/44/0e/e3/440ee3dbcd5ff02b54bc4cbca41f53eb.gif", 
+                text: "بما إني عملت الكود ده مخصوص ليكي... هل تقبلي نشرب قهوة سوا ونعوض أي win ضاع منك يا لميس؟ ☕💕",
+                gif: "https://tenor.com/view/bubu-dudu-coffee-break-pilui-gif-15095084592566815021.gif", 
                 isFinal: true
             }
         ];
@@ -169,15 +187,25 @@
             }
         }
 
-        function runAway() {
+        // دالة الزرار الهارب متوافقة مع الموبايل
+        function runAway(event) {
+            // منع النقرة في الموبايل عشان الزرار ما يشتغلش بالغلط
+            if(event) {
+                event.preventDefault();
+            }
+            
             const button = document.getElementById("no-btn");
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
             
+            // حساب أبعاد الزرار عشان ميهربش بره الشاشة
+            const btnWidth = button.offsetWidth || 100;
+            const btnHeight = button.offsetHeight || 50;
+            
             button.style.position = "fixed";
             
-            const randomX = Math.random() * (windowWidth - 100);
-            const randomY = Math.random() * (windowHeight - 50);
+            const randomX = Math.random() * (windowWidth - btnWidth - 20) + 10;
+            const randomY = Math.random() * (windowHeight - btnHeight - 20) + 10;
             
             button.style.left = randomX + "px";
             button.style.top = randomY + "px";
@@ -185,7 +213,7 @@
 
         function sayYes() {
             document.getElementById("story-gif").src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
-            document.getElementById("story-text").innerText = "أحلى موافقة في الدنيا! هستناكي نحدد الميعاد 🥰🎉";
+            document.getElementById("story-text").innerText = "أحلى موافقة في الدنيا! هستناكي نحدد الميعاد يا لميس 🥰🎉";
             document.getElementById("final-buttons").style.display = "none";
             createHearts();
         }
