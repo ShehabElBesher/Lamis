@@ -14,7 +14,6 @@
             background-color: #fce4ec; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
-            /* عشان نمنع تحديد النص في الموبايل */
             user-select: none; 
             -webkit-user-select: none;
         }
@@ -128,13 +127,14 @@
                 btn: "بجد؟ 🙈"
             },
             {
+                // تم تعديل الصورة هنا
                 text: "وغير الرقة دي، انتي حرفياً (شبح التيك توك)! 👻 ولما بتقولي 'اررررححححب' بتعملي عظمة يا لميس! 😂",
-                gif: "https://tenor.com/view/movietime-gif-26874766.gif", 
+                gif: "https://tenor.com/view/peach-goma-peach-and-goma-heart-love-gif-21391528.gif", 
                 btn: "ههههه كمل ✨"
             },
             {
-                text: "وده إحساسي لما بتخسري وتاخدي 'وناااااتيييي' 🥺💔",
-                gif: "https://tenor.com/view/hi-there-are-you-gif-22536691.gif", 
+                text: "وده احساسي لما (ربنا ما يخسرك أبداً في حاجة) بنخسر وتقولي اخدووو ونااااتي 🥺💔",
+                gif: "https://tenor.com/view/mochi-cat-crying-gif-13367115646853754077.gif", 
                 btn: "يا روحي 🥺"
             },
             {
@@ -158,7 +158,7 @@
                 btn: "التالي 👀"
             },
             {
-                text: "فالقط مقدرش يستحمل، راح قعد على الكمبيوتر💕وكتب كود الصفحة دي مخصوص عشان يبعتهولك يا لميس 💻🐈",
+                text: "فالقط مقدرش يستحمل، راح قعد على الكمبيوتر وسهر يكتب كود الصفحة دي مخصوص عشان يبعتهولك يا لميس 💻🐈",
                 gif: "https://tenor.com/view/peach-and-goma-gif-14755089461093313163.gif", 
                 btn: "ايه هي الرسالة؟ 💌"
             },
@@ -187,9 +187,7 @@
             }
         }
 
-        // دالة الزرار الهارب متوافقة مع الموبايل
         function runAway(event) {
-            // منع النقرة في الموبايل عشان الزرار ما يشتغلش بالغلط
             if(event) {
                 event.preventDefault();
             }
@@ -198,7 +196,6 @@
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
             
-            // حساب أبعاد الزرار عشان ميهربش بره الشاشة
             const btnWidth = button.offsetWidth || 100;
             const btnHeight = button.offsetHeight || 50;
             
@@ -213,7 +210,7 @@
 
         function sayYes() {
             document.getElementById("story-gif").src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
-            document.getElementById("story-text").innerText = "أحلى موافقة في الدنيا هستناكي نحدد الميعاد يا صغننه 🥰🎉";
+            document.getElementById("story-text").innerText = "أحلى موافقة في الدنيا! هستناكي نحدد الميعاد يا لميس 🥰🎉";
             document.getElementById("final-buttons").style.display = "none";
             createHearts();
         }
