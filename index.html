@@ -11,7 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #fce4ec; /* وردي هادي جداً */
+            background-color: #fce4ec; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
         }
@@ -63,7 +63,6 @@
             transform: scale(1.05);
         }
 
-        /* تنسيق أزرار النهاية */
         .final-buttons {
             display: none;
             justify-content: center;
@@ -105,16 +104,13 @@
 <body>
 
     <div class="container">
-        <!-- الصورة -->
-        <img id="story-gif" src="https://media.tenor.com/X2A6fOq8xOMAAAAi/cat-phone.gif" alt="Cute Cat" class="cat-gif">
+        <!-- الصورة المبدئية -->
+        <img id="story-gif" src="https://i.pinimg.com/originals/81/81/47/8181473cdcc6f4cfccb4f0b3e5218d6a.gif" alt="Cute Cat" class="cat-gif">
         
-        <!-- النص -->
         <h2 id="story-text">بتفرج على التيك توك كالعادة... فجأة ظهرتلي تيك توكر جديدة اسمها (لميس) ✨</h2>
         
-        <!-- زر التالي -->
         <button id="next-button" class="next-btn" onclick="nextScene()">وبعدين؟ 👀</button>
 
-        <!-- أزرار المشهد الأخير -->
         <div id="final-buttons" class="final-buttons">
             <button class="yes-btn" onclick="sayYes()">موافقة طبعاً! 🥰</button>
             <button id="no-btn" class="no-btn" onmouseover="runAway()">لا 😾</button>
@@ -122,36 +118,35 @@
     </div>
 
     <script>
-        // أحداث القصة
         const scenes = [
             {
                 text: "بتفرج على التيك توك كالعادة... فجأة ظهرتلي تيك توكر جديدة اسمها (لميس) ✨",
-                gif: "https://media.tenor.com/X2A6fOq8xOMAAAAi/cat-phone.gif", // قط ماسك موبايل
+                gif: "https://i.pinimg.com/originals/81/81/47/8181473cdcc6f4cfccb4f0b3e5218d6a.gif", 
                 btn: "وبعدين؟ 👀"
             },
             {
                 text: "أول مرة في حياتي أخد بالي من حد وأهتم بيه كده... انتي حد مميز جداً، جميلة، رقيقة، وعاقلة بزيادة 💖",
-                gif: "https://media.tenor.com/ZtwD1rEheQ4AAAAi/peach-goma.gif", // قط عيونه قلوب
+                gif: "https://i.pinimg.com/originals/e8/37/10/e83710787b64a2f1c84136bcad212a4f.gif", 
                 btn: "بجد؟ 🙈"
             },
             {
                 text: "وغير الرقة دي، انتي حرفياً (شبح التيك توك)! 👻 ولما بتقولي 'اررررححححب' بتعملي عظمة! 😂",
-                gif: "https://media.tenor.com/kYqU37-f0ZgAAAAi/bubu-bubu-dudu.gif", // قط متحمس ومبسوط
+                gif: "https://i.pinimg.com/originals/17/dc/5d/17dc5d7366ff40d41e5317a3ee302484.gif", 
                 btn: "ههههه كمل ✨"
             },
             {
                 text: "بس أكتر حاجة بتخطف قلبي... لما بتخسري الـ win وتقولي 'وناااااتيييي' بطريقتك القمر دي 🥺💔",
-                gif: "https://media.tenor.com/bY-qT3z3wTEAAAAi/bubu-dudu.gif", // قط زعلان ولطيف
+                gif: "https://i.pinimg.com/originals/bd/a6/50/bda650630b91e9f1a0e1bba69e1c3124.gif", 
                 btn: "يا روحي 🥺"
             },
             {
                 text: "فالقط مقدرش يستحمل، راح قعد على الكمبيوتر وسهر يكتب كود الصفحة دي مخصوص عشان يبعتهالك 💻🐈",
-                gif: "https://media.tenor.com/0P6V70vS2pUAAAAi/cat-typing.gif", // قط بيكتب على الكيبورد بسرعة
+                gif: "https://i.pinimg.com/originals/58/c2/f7/58c2f7418fc9613ed878e1c6b1aab9da.gif", 
                 btn: "ايه هي الرسالة؟ 💌"
             },
             {
                 text: "بما إني عملت الكود ده مخصوص... هل تقبلي نشرب قهوة سوا ونعوض أي win ضاع منك؟ ☕💕",
-                gif: "https://media.tenor.com/efebwZXGQCUAAAAi/tkthao219-peach.gif", // قط بيقدم وردة
+                gif: "https://i.pinimg.com/originals/44/0e/e3/440ee3dbcd5ff02b54bc4cbca41f53eb.gif", 
                 isFinal: true
             }
         ];
@@ -162,12 +157,10 @@
             currentScene++;
             
             if(currentScene < scenes.length) {
-                // تغيير الصورة والنص والزر
                 document.getElementById("story-gif").src = scenes[currentScene].gif;
                 document.getElementById("story-text").innerText = scenes[currentScene].text;
                 
                 if(scenes[currentScene].isFinal) {
-                    // إخفاء زر التالي وإظهار أزرار نعم ولا
                     document.getElementById("next-button").style.display = "none";
                     document.getElementById("final-buttons").style.display = "flex";
                 } else {
@@ -176,7 +169,6 @@
             }
         }
 
-        // دالة هروب زر "لا"
         function runAway() {
             const button = document.getElementById("no-btn");
             const windowWidth = window.innerWidth;
@@ -191,7 +183,6 @@
             button.style.top = randomY + "px";
         }
 
-        // دالة الموافقة
         function sayYes() {
             document.getElementById("story-gif").src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
             document.getElementById("story-text").innerText = "أحلى موافقة في الدنيا! هستناكي نحدد الميعاد 🥰🎉";
@@ -199,7 +190,6 @@
             createHearts();
         }
 
-        // مطر القلوب
         function createHearts() {
             for (let i = 0; i < 40; i++) {
                 let heart = document.createElement("div");
